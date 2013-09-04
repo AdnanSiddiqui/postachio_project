@@ -1,0 +1,64 @@
+body {
+  background-color: #3583d7;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0; }
+
+#wrapper {
+  margin: 50px auto 0;
+  width: 80%;
+  height: 100%;
+  text-align: center; }
+
+h1 {
+  font-family: "Conv_Lavanderia Regular";
+  color: #eeeef3; }
+
+h2 {
+  font-family: "Conv_Dense-Regular", Sans-Serif;
+  color: #565759; }
+
+#tagline {
+  width: 225px;
+  height: 34px;
+  background: url("../images/tagline@2x.png") no-repeat;
+  background-size: cover;
+  background-position: 100% 100%;
+  margin: 10px auto 0; }
+  #tagline h2 {
+    color: transparent;
+    font: 0/0 a;
+    text-shadow: none; }
+
+.cloud {
+  width: 260px;
+  height: 170px;
+  background: url("../images/cloud@2x.png") no-repeat;
+  background-size: cover;
+  background-position: 100% 100%;
+  display: inline-block; }
+  .cloud a {
+    text-decoration: none;
+    color: #565759;
+    font-family: "Conv_Dense-Regular", Sans-Serif;
+    font-size: 40px;
+    position: relative;
+    top: 80px;
+    left: 0px; }
+
+footer {
+  position: absolute;
+  bottom: 0;
+  left: 590px; }
+  footer p {
+    color: #565759;
+    font-family: "Conv_Dense-Regular", Sans-Serif;
+    opacity: 0.8; }
+    footer p img {
+      width: 200px;
+      top: 50px;
+      opacity: 1;
+      position: relative;
+      top: 10px;
+      margin: 0 5px; }
