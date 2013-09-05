@@ -55,29 +55,40 @@ h2 {
 
 .cloud {
 	@include size(260px 170px);
-	background: url("../images/cloud@2x.png") no-repeat;
+	background: url("../images/shadow@2x.png") no-repeat;
 	background-size: cover;
 	background-position: 100% 100%;
 	display: inline-block;
 	margin: 0;
-	@include position(relative, 0 0 35px 0);
+	@include position(relative, 0 0 22px 15px);
 	z-index: 2;
 	&:nth-of-type(odd) {
 		bottom: 90px;
 		z-index: 1;
 	}
 	&:first-of-type {
-		left: 45px;
+		left: 50px;
 	}
 	&:nth-of-type(3) {
-		right: 45px;
+		left: -30px;
+	}
+	&::after {
+		content: "";
+		display: inline-block;
+		@include position(relative, 0 0 55px -12px);
+		width: 260px;
+		height: 170px;
+		background: url("../images/cloud@2x.png") no-repeat;
+		background-position: 100% 100%;
+		background-size: cover;
 	}
 	a {
 		text-decoration: none;
 		color: $txt_color;
 		font-family: $txt_font;
 		font-size: 40px;
-		@include position(relative, 80px 0 0 0px);
+		@include position(relative, 60px 0 0 0px);
+		z-index: 2;
 	}
 }
 
@@ -99,3 +110,4 @@ footer {
 		}
 	}
 }
+

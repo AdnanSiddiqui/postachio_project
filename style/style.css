@@ -46,29 +46,42 @@ h2 {
 .cloud {
   width: 260px;
   height: 170px;
-  background: url("../images/cloud@2x.png") no-repeat;
+  background: url("../images/shadow@2x.png") no-repeat;
   background-size: cover;
   background-position: 100% 100%;
   display: inline-block;
   margin: 0;
   position: relative;
-  bottom: 35px;
+  bottom: 22px;
+  left: 15px;
   z-index: 2; }
   .cloud:nth-of-type(odd) {
     bottom: 90px;
     z-index: 1; }
   .cloud:first-of-type {
-    left: 45px; }
+    left: 50px; }
   .cloud:nth-of-type(3) {
-    right: 45px; }
+    left: -30px; }
+  .cloud::after {
+    content: "";
+    display: inline-block;
+    position: relative;
+    bottom: 55px;
+    left: -12px;
+    width: 260px;
+    height: 170px;
+    background: url("../images/cloud@2x.png") no-repeat;
+    background-position: 100% 100%;
+    background-size: cover; }
   .cloud a {
     text-decoration: none;
     color: #565759;
     font-family: "Conv_Dense-Regular", Sans-Serif;
     font-size: 40px;
     position: relative;
-    top: 80px;
-    left: 0px; }
+    top: 60px;
+    left: 0px;
+    z-index: 2; }
 
 footer {
   position: absolute;
