@@ -6,18 +6,30 @@ body {
   margin: 0; }
 
 #wrapper {
-  margin: 50px auto 0;
+  margin: 100px auto 0;
   width: 80%;
   height: 100%;
-  text-align: center; }
+  text-align: center;
+  min-width: 800px; }
 
 h1 {
   font-family: "Conv_Lavanderia Regular";
-  color: #eeeef3; }
+  color: #eeeef3;
+  font-size: 146px;
+  margin: 0;
+  padding: 0; }
 
 h2 {
   font-family: "Conv_Dense-Regular", Sans-Serif;
-  color: #565759; }
+  color: #565759;
+  font-size: 70px;
+  margin: 0;
+  padding: 0; }
+  h2:first-of-type {
+    position: relative;
+    top: 65px;
+    right: 90px;
+    letter-spacing: -1px; }
 
 #tagline {
   width: 225px;
@@ -37,7 +49,18 @@ h2 {
   background: url("../images/cloud@2x.png") no-repeat;
   background-size: cover;
   background-position: 100% 100%;
-  display: inline-block; }
+  display: inline-block;
+  margin: 0;
+  position: relative;
+  bottom: 35px;
+  z-index: 2; }
+  .cloud:nth-of-type(odd) {
+    bottom: 90px;
+    z-index: 1; }
+  .cloud:first-of-type {
+    left: 45px; }
+  .cloud:nth-of-type(3) {
+    right: 45px; }
   .cloud a {
     text-decoration: none;
     color: #565759;
@@ -50,7 +73,8 @@ h2 {
 footer {
   position: absolute;
   bottom: 0;
-  left: 590px; }
+  left: 50%;
+  margin-left: -124px; }
   footer p {
     color: #565759;
     font-family: "Conv_Dense-Regular", Sans-Serif;
