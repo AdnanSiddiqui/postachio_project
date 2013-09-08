@@ -59,12 +59,14 @@ h2 {
 .cloud {
 	@include size(260px 170px);
 	background: url("../images/shadow@2x.png") no-repeat;
+	opacity: 0.9;
 	background-size: cover;
 	background-position: 100% 100%;
 	display: inline-block;
 	margin: 0;
 	@include position(relative, 0 0 22px 15px);
 	z-index: 2;
+	@include transition (all ease-in-out 1s);
 	&:nth-of-type(odd) {
 		bottom: 90px;
 		z-index: 1;
@@ -96,6 +98,10 @@ h2 {
 		background-position: 100% 100%;
 		background-size: cover;
 	}
+	&:hover {
+		@include animation-play-state(paused);
+		opacity: 1;
+	}
 	a {
 		text-decoration: none;
 		color: $txt_color;
@@ -103,6 +109,12 @@ h2 {
 		font-size: 40px;
 		@include position(relative, 60px 10px 0 -12px);
 		z-index: 2;
+		opacity: 0.8;
+		@include transition(all 0.5s ease-in);
+		&:hover {
+			opacity: 1;
+			font-size: 42px;
+		}
 	}
 }
 
