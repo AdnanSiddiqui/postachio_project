@@ -27,6 +27,7 @@ h1 {
 	font-size: 146px;
 	margin: 0;
 	padding: 0;
+	@include animation(intro_title 3s ease-out);
 }
 
 h2 {
@@ -38,6 +39,7 @@ h2 {
 	&:first-of-type {
 		@include position(relative, 65px 90px 0 0);
 		letter-spacing: -1px;
+		@include animation(intro_title 3s ease-out);
 	}
 }
 
@@ -46,10 +48,11 @@ h2 {
 	background: url("../images/tagline@2x.png") no-repeat;
 	background-size: cover;
 	background-position: 100% 100%;
-	margin: 10px auto 0;
+	margin: -15px auto 0;
 	h2 {
 		@include hide-text;
 	}
+	@include animation(intro_tag 5s ease-out);
 
 }
 
@@ -68,9 +71,20 @@ h2 {
 	}
 	&:first-of-type {
 		left: 50px;
+		@include animation(intro_left_top 3s ease-out, float_second 7.5s linear infinite 3s);
+		//@include animation(float_second 7.5s linear infinite 2s backwards);
+		//@include animation-direction(backwards);
+	}
+	&:nth-of-type(2) {
+		@include animation(intro_left_bottom 3s ease-out, float_first 7.0s linear infinite 3s);
+		//@include animation(float_first 7.0s linear infinite 2s both );
+		//@include animation-direction(both);
 	}
 	&:nth-of-type(3) {
 		left: -30px;
+		@include animation(intro_right 3s ease-out, float_third 6.5s linear infinite 3s);
+		//@include animation(float_third 6.5s linear infinite 2s forwards);
+		//@include animation-direction(forwards);
 	}
 	&::after {
 		content: "";
@@ -87,7 +101,7 @@ h2 {
 		color: $txt_color;
 		font-family: $txt_font;
 		font-size: 40px;
-		@include position(relative, 60px 0 0 0px);
+		@include position(relative, 60px 10px 0 -12px);
 		z-index: 2;
 	}
 }
@@ -97,6 +111,7 @@ footer {
 	bottom: 0;
 	left: 50%;
 	margin-left: -124px;
+	@include animation(intro_tag 10s ease-out);
 	p {
 		color: $txt_color;
 		font-family: $txt_font;
@@ -111,3 +126,125 @@ footer {
 	}
 }
 
+@include keyframes(float_first) {
+	0% {
+		left: 15px;
+		bottom: 22px;
+	}
+	33% {
+		left: 25px;
+		bottom: 21px;
+		@include transform(scale(1.025));
+		@include transform-origin(center center);
+	}
+	66% {
+		left: 10px;
+		bottom: 20px;
+		@include transform(scale(1.05));
+		@include transform-origin(center center);
+	}
+	100% {
+		left: 15px;
+		bottom: 22px;
+	}
+}
+
+@include keyframes(float_second) {
+	0% {
+		left: 50px;
+		bottom: 90px;
+	}
+	33% {
+		left: 40px;
+		bottom: 88px;
+		@include transform(scale(1.05));
+		@include transform-origin(center center);
+		
+	}
+	66% {
+		left: 60px;
+		bottom: 89px;
+		@include transform(scale(1.025));
+		@include transform-origin(center center);
+	}
+	100% {
+		left: 50px;
+		bottom: 90px;
+	}
+}
+
+@include keyframes(float_third) {
+	0% {
+		left: -30px;
+		bottom: 90px;
+	}
+	33% {
+		left: -20px;
+		bottom: 89px;
+		@include transform(scale(1.025));
+		@include transform-origin(center center);
+	}
+	66% {
+		left: -40px;
+		bottom: 88px;
+		@include transform(scale(1.05));
+		@include transform-origin(center center);
+	}
+	100% {
+		left: -30px;
+		bottom: 90px;
+	}
+}
+
+@include keyframes(intro_left_top) {
+	0% {
+		left: -1400px;
+	}
+	100% {
+		left: 50px;
+	}
+}
+
+@include keyframes(intro_left_bottom) {
+	0% {
+		left: -1400px;
+	}
+	100% {
+		left: 15px;
+	}
+}
+
+@include keyframes(intro_right) {
+	0% {
+		left: 1400px; 
+	}
+	100% {
+		left: -30px;
+	}
+}
+
+@include keyframes(intro_title) {
+	0% {
+		@include transform(scale(0.05));
+		@include transform-origin(center center);
+		opacity: 0;
+	}
+	80% {
+		@include transform(scale(1.05));
+		@include transform-origin(center center);
+	}
+	100% {
+		@include transform(scale(1));
+		@include transform-origin(center center);
+		opacity: 1;
+	}
+}
+
+@include keyframes(intro_tag) {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
