@@ -18,6 +18,7 @@ h1 {
   font-size: 146px;
   margin: 0;
   padding: 0;
+  font-weight: normal;
   -webkit-animation: intro_title 3s ease-out;
   -moz-animation: intro_title 3s ease-out;
   animation: intro_title 3s ease-out; }
@@ -27,7 +28,8 @@ h2 {
   color: #565759;
   font-size: 70px;
   margin: 0;
-  padding: 0; }
+  padding: 0;
+  font-weight: normal; }
   h2:first-of-type {
     position: relative;
     top: 65px;
