@@ -50,7 +50,8 @@ h2 {
 	background: url("../images/tagline@2x.png") no-repeat;
 	background-size: cover;
 	background-position: 100% 100%;
-	margin: -15px auto 0;
+	margin: 15px auto 0;
+	cursor: pointer;
 	h2 {
 		@include hide-text;
 	}
@@ -120,11 +121,48 @@ h2 {
 	}
 }
 
+.shown {
+	visibility: visible !important;
+	@include animation(extra_appear 2s ease-out);
+}
+
+#extra {
+	text-align: left;
+	font-family: $txt_font;
+	color: $fancy_color;
+	font-size: 24px;
+	width: 600px;
+	letter-spacing: 1.5px;
+	margin: 30px auto 0px;
+	visibility: hidden;
+	p {
+		margin: 0 0 5px 0;
+		padding: 0;
+	}
+	h2 {
+		font-family: $fancy_font;
+		text-align: right;
+		color: $fancy_color;
+		@include animation(none);
+		margin: 0;
+		padding: 0;
+		position: inherit;
+		letter-spacing: 0;
+		font-size: 35px;
+	}
+	h3 {
+		margin: 0;
+		padding: 0;
+		text-align: right;
+		color: $fancy_color;
+		font-size: 20px;
+		font-weight: normal;
+	}
+}
+
 footer {
-	position: absolute;
+	position: relative;
 	bottom: 0;
-	left: 50%;
-	margin-left: -124px;
 	@include animation(intro_tag 10s ease-out);
 	p {
 		color: $txt_color;
@@ -257,6 +295,19 @@ footer {
 @include keyframes(intro_tag) {
 	0% {
 		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+@include keyframes(extra_appear) {
+	0% {
+		opacity: 0;
+		margin-top: -300px;
+	}
+	75% {
+		margin-top: 30px;
 	}
 	100% {
 		opacity: 1;

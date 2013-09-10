@@ -45,7 +45,8 @@ h2 {
   background: url("../images/tagline@2x.png") no-repeat;
   background-size: cover;
   background-position: 100% 100%;
-  margin: -15px auto 0;
+  margin: 15px auto 0;
+  cursor: pointer;
   -webkit-animation: intro_tag 5s ease-out;
   -moz-animation: intro_tag 5s ease-out;
   animation: intro_tag 5s ease-out; }
@@ -121,11 +122,47 @@ h2 {
       opacity: 1;
       font-size: 42px; }
 
+.shown {
+  visibility: visible !important;
+  -webkit-animation: extra_appear 2s ease-out;
+  -moz-animation: extra_appear 2s ease-out;
+  animation: extra_appear 2s ease-out; }
+
+#extra {
+  text-align: left;
+  font-family: "Conv_Dense-Regular", Sans-Serif;
+  color: #eeeef3;
+  font-size: 24px;
+  width: 600px;
+  letter-spacing: 1.5px;
+  margin: 30px auto 0px;
+  visibility: hidden; }
+  #extra p {
+    margin: 0 0 5px 0;
+    padding: 0; }
+  #extra h2 {
+    font-family: "Conv_Lavanderia Regular";
+    text-align: right;
+    color: #eeeef3;
+    -webkit-animation: none;
+    -moz-animation: none;
+    animation: none;
+    margin: 0;
+    padding: 0;
+    position: inherit;
+    letter-spacing: 0;
+    font-size: 35px; }
+  #extra h3 {
+    margin: 0;
+    padding: 0;
+    text-align: right;
+    color: #eeeef3;
+    font-size: 20px;
+    font-weight: normal; }
+
 footer {
-  position: absolute;
+  position: relative;
   bottom: 0;
-  left: 50%;
-  margin-left: -124px;
   -webkit-animation: intro_tag 10s ease-out;
   -moz-animation: intro_tag 10s ease-out;
   animation: intro_tag 10s ease-out; }
@@ -561,6 +598,50 @@ footer {
 @keyframes intro_tag {
   0% {
     opacity: 0; }
+
+  100% {
+    opacity: 1; } }
+
+@-webkit-keyframes extra_appear {
+  0% {
+    opacity: 0;
+    margin-top: -300px; }
+
+  75% {
+    margin-top: 30px; }
+
+  100% {
+    opacity: 1; } }
+
+@-moz-keyframes extra_appear {
+  0% {
+    opacity: 0;
+    margin-top: -300px; }
+
+  75% {
+    margin-top: 30px; }
+
+  100% {
+    opacity: 1; } }
+
+@-o-keyframes extra_appear {
+  0% {
+    opacity: 0;
+    margin-top: -300px; }
+
+  75% {
+    margin-top: 30px; }
+
+  100% {
+    opacity: 1; } }
+
+@keyframes extra_appear {
+  0% {
+    opacity: 0;
+    margin-top: -300px; }
+
+  75% {
+    margin-top: 30px; }
 
   100% {
     opacity: 1; } }
