@@ -120,6 +120,11 @@ h2 {
 	@include animation(extra_appear 2s ease-out);
 }
 
+.disappear {
+	visibility: visible !important;
+	@include animation(extra_disappear 2s ease-out);
+}
+
 #extra {
 	text-align: left;
 	font-family: $txt_font;
@@ -127,7 +132,7 @@ h2 {
 	font-size: 28px;
 	width: 600px;
 	letter-spacing: 1.5px;
-	margin: 30px auto 0px;
+	margin: 10px auto 0px;
 	visibility: hidden;
 	p {
 		margin: 0 0 5px 0;
@@ -154,6 +159,14 @@ h2 {
 		color: $fancy_color;
 		font-size: 24px;
 		font-weight: normal;
+	}
+	img {
+		@include position(relative, 45px 0 0 570px);
+		cursor: pointer;
+		opacity: 0.6;
+		&:hover {
+			opacity: 1;
+		}
 	}
 }
 
@@ -308,5 +321,14 @@ footer {
 	}
 	100% {
 		opacity: 1;
+	}
+}
+
+@include keyframes(extra_disappear) {
+	0% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;	
 	}
 }
