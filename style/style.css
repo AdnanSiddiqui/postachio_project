@@ -132,7 +132,7 @@ h2 {
   text-align: left;
   font-family: "Conv_Dense-Regular", Sans-Serif;
   color: #eeeef3;
-  font-size: 24px;
+  font-size: 28px;
   width: 600px;
   letter-spacing: 1.5px;
   margin: 30px auto 0px;
@@ -140,6 +140,8 @@ h2 {
   #extra p {
     margin: 0 0 5px 0;
     padding: 0; }
+    #extra p#castle {
+      margin-left: 200px; }
   #extra h2 {
     font-family: "Conv_Lavanderia Regular";
     text-align: right;
@@ -157,7 +159,7 @@ h2 {
     padding: 0;
     text-align: right;
     color: #eeeef3;
-    font-size: 20px;
+    font-size: 24px;
     font-weight: normal; }
 
 footer {

@@ -77,19 +77,13 @@ h2 {
 	&:first-of-type {
 		left: 50px;
 		@include animation(intro_left_top 3s ease-out, float_second 7.5s linear infinite 3s);
-		//@include animation(float_second 7.5s linear infinite 2s backwards);
-		//@include animation-direction(backwards);
 	}
 	&:nth-of-type(2) {
-		@include animation(intro_left_bottom 3s ease-out, float_first 7.0s linear infinite 3s);
-		//@include animation(float_first 7.0s linear infinite 2s both );
-		//@include animation-direction(both);
+		@include animation(intro_left_bottom 3s ease-out, float_first 7s linear infinite 3s);
 	}
 	&:nth-of-type(3) {
 		left: -30px;
 		@include animation(intro_right 3s ease-out, float_third 6.5s linear infinite 3s);
-		//@include animation(float_third 6.5s linear infinite 2s forwards);
-		//@include animation-direction(forwards);
 	}
 	&::after {
 		content: "";
@@ -130,7 +124,7 @@ h2 {
 	text-align: left;
 	font-family: $txt_font;
 	color: $fancy_color;
-	font-size: 24px;
+	font-size: 28px;
 	width: 600px;
 	letter-spacing: 1.5px;
 	margin: 30px auto 0px;
@@ -138,6 +132,9 @@ h2 {
 	p {
 		margin: 0 0 5px 0;
 		padding: 0;
+		&#castle {
+			margin-left: 200px;
+		}
 	}
 	h2 {
 		font-family: $fancy_font;
@@ -155,7 +152,7 @@ h2 {
 		padding: 0;
 		text-align: right;
 		color: $fancy_color;
-		font-size: 20px;
+		font-size: 24px;
 		font-weight: normal;
 	}
 }
