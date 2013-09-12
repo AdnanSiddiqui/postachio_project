@@ -1,11 +1,25 @@
-var tagline = document.getElementById('tagline');
-var extra = document.getElementById('extra');
+var tagline = document.getElementById('tagline'),
+ extra = document.getElementById('extra'),
+ extraClose = document.getElementById('extra-close'),
+ modalClose = document.querySelectorAll('.close'),
+ i,
+ length = modalClose.length,
+ seeker = document.querySelector('#seeker'),
+ storyteller = document.querySelector('#storyteller'),
+ resume = document.querySelector('.modal#resume'),
+ samples = document.querySelector('.modal#samples');
 
-tagline.addEventListener('click', function() {
-	extra.classList.toggle('extra-shown');
-}, false);
+var addClass = function( elementClicked, elementModified, classAdded ) {
+	elementClicked.addEventListener( 'click', function() {
+		elementModified.classList.add( classAdded );
+	}, false );
+}
 
-var extraClose = document.getElementById('extra-close');
+addClass( tagline, extra, 'extra-shown' );
+
+addClass( seeker, resume, 'appear' );
+
+addClass( storyteller, samples, 'appear' );
 
 extraClose.addEventListener('click', function() {
 	extra.classList.remove('extra-shown');
@@ -15,28 +29,9 @@ extraClose.addEventListener('click', function() {
 	}, 2000);
 }, false);
 
-var seeker = document.querySelector('#seeker'),
-	storyteller = document.querySelector('#storyteller'),
-	resume = document.querySelector('.modal#resume'),
-	samples = document.querySelector('.modal#samples');
-
-seeker.addEventListener('click', function() {
-	resume.classList.add('appear');
-}, false);
-
-storyteller.addEventListener('click', function() {
-	samples.classList.add('appear');
-}, false);
-
-var modalClose = document.querySelectorAll('.close');
-
-var i,
-	length = modalClose.length;
-
 for( i = 0; i < length; i++ ) {
 	modalClose[i].addEventListener('click', function() {
 		if (resume.className == "modal appear" ) {
-			console.log('true');
 			resume.classList.remove('appear');
 			resume.classList.add('disappear');
 			var timeoutId = window.setTimeout(function() {
@@ -51,8 +46,5 @@ for( i = 0; i < length; i++ ) {
 		}, 1500);
 	}, false);
 }
-
-var footer = document.getElementsByTagName('footer')[0];
-
 
 
