@@ -190,10 +190,11 @@ h2 {
 	z-index: 5;
 	visibility: hidden;
 	.wrapper {
+		overflow: scroll;
 		width: 1000px;
 		height: 80%;
 		background: darken($fancy_color, 5%);
-		border-radius: 20px;
+		border-radius: 16px;
 		margin: 0 auto;
 		@include position(absolute, 100px 0 0 50%);
 		margin-left: -500px;
@@ -219,6 +220,31 @@ h2 {
 				background: $bg_color;
 				color: $fancy_color;
 				@include border-top-radius(16px);
+			}
+		}
+		h2 {
+			@include animation(none);
+			margin: 0;
+			padding: 0;
+			font-family: futura, sans-serif;
+			font-size: 28px;
+		}
+		section {
+			padding: 0;
+			margin: 0 auto;
+			h1 {
+				text-align: left;
+				margin-left: 25px;
+				margin-bottom: 10px;
+			}
+			h2 {
+				position: static;
+			}
+			ul {
+				text-align: left;
+				li {
+					list-style-position: inside;
+				}
 			}
 		}
 		article {
