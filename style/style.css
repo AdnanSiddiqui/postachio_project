@@ -122,13 +122,13 @@ h2 {
       opacity: 1;
       font-size: 42px; }
 
-.shown {
+.extra-shown {
   visibility: visible !important;
   -webkit-animation: extra_appear 2s ease-out;
   -moz-animation: extra_appear 2s ease-out;
   animation: extra_appear 2s ease-out; }
 
-.disappear {
+.extra-disappear {
   visibility: visible !important;
   -webkit-animation: extra_disappear 2s ease-out;
   -moz-animation: extra_disappear 2s ease-out;
@@ -176,6 +176,18 @@ h2 {
     #extra img:hover {
       opacity: 1; }
 
+.appear {
+  visibility: visible !important;
+  -webkit-animation: modal_appear 1.5s ease-out;
+  -moz-animation: modal_appear 1.5s ease-out;
+  animation: modal_appear 1.5s ease-out; }
+
+.disappear {
+  visibility: visible !important;
+  -webkit-animation: modal_disappear 1.5s ease-out;
+  -moz-animation: modal_disappear 1.5s ease-out;
+  animation: modal_disappear 1.5s ease-out; }
+
 .modal {
   width: 100%;
   height: 100%;
@@ -185,7 +197,8 @@ h2 {
   position: absolute;
   top: 0px;
   left: 0px;
-  z-index: 5; }
+  z-index: 5;
+  visibility: hidden; }
   .modal .wrapper {
     width: 1000px;
     height: 80%;
@@ -784,3 +797,123 @@ footer {
 
   100% {
     opacity: 0; } }
+
+@-webkit-keyframes modal_appear {
+  0% {
+    -webkit-transform: scale(0.01);
+    -webkit-transform-origin: center center;
+    opacity: 0;
+    background: rgba(86, 87, 89, 0); }
+
+  99% {
+    background: rgba(86, 87, 89, 0); }
+
+  100% {
+    -webkit-transform: scale(1);
+    -webkit-transform-origin: center center;
+    opacity: 1;
+    background: rgba(86, 87, 89, 0.8); } }
+
+@-moz-keyframes modal_appear {
+  0% {
+    -moz-transform: scale(0.01);
+    -moz-transform-origin: center center;
+    opacity: 0;
+    background: rgba(86, 87, 89, 0); }
+
+  99% {
+    background: rgba(86, 87, 89, 0); }
+
+  100% {
+    -moz-transform: scale(1);
+    -moz-transform-origin: center center;
+    opacity: 1;
+    background: rgba(86, 87, 89, 0.8); } }
+
+@-o-keyframes modal_appear {
+  0% {
+    -o-transform: scale(0.01);
+    -o-transform-origin: center center;
+    opacity: 0;
+    background: rgba(86, 87, 89, 0); }
+
+  99% {
+    background: rgba(86, 87, 89, 0); }
+
+  100% {
+    -o-transform: scale(1);
+    -o-transform-origin: center center;
+    opacity: 1;
+    background: rgba(86, 87, 89, 0.8); } }
+
+@keyframes modal_appear {
+  0% {
+    transform: scale(0.01);
+    transform-origin: center center;
+    opacity: 0;
+    background: rgba(86, 87, 89, 0); }
+
+  99% {
+    background: rgba(86, 87, 89, 0); }
+
+  100% {
+    transform: scale(1);
+    transform-origin: center center;
+    opacity: 1;
+    background: rgba(86, 87, 89, 0.8); } }
+
+@-webkit-keyframes modal_disappear {
+  0% {
+    -webkit-transform: scale(1);
+    background: rgba(86, 87, 89, 0.8); }
+
+  25% {
+    -webkit-transform: scale(1);
+    background: rgba(86, 87, 89, 0); }
+
+  100% {
+    -webkit-transform: scale(0.001);
+    -webkit-transform-origin: center center;
+    background: rgba(86, 87, 89, 0); } }
+
+@-moz-keyframes modal_disappear {
+  0% {
+    -moz-transform: scale(1);
+    background: rgba(86, 87, 89, 0.8); }
+
+  25% {
+    -moz-transform: scale(1);
+    background: rgba(86, 87, 89, 0); }
+
+  100% {
+    -moz-transform: scale(0.001);
+    -moz-transform-origin: center center;
+    background: rgba(86, 87, 89, 0); } }
+
+@-o-keyframes modal_disappear {
+  0% {
+    -o-transform: scale(1);
+    background: rgba(86, 87, 89, 0.8); }
+
+  25% {
+    -o-transform: scale(1);
+    background: rgba(86, 87, 89, 0); }
+
+  100% {
+    -o-transform: scale(0.001);
+    -o-transform-origin: center center;
+    background: rgba(86, 87, 89, 0); } }
+
+@keyframes modal_disappear {
+  0% {
+    transform: scale(1);
+    background: rgba(86, 87, 89, 0.8); }
+
+  25% {
+    transform: scale(1);
+    background: rgba(86, 87, 89, 0); }
+
+  100% {
+    transform: scale(0.001);
+    transform-origin: center center;
+    background: rgba(86, 87, 89, 0); } }

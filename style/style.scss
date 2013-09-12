@@ -115,12 +115,12 @@ h2 {
 	}
 }
 
-.shown {
+.extra-shown {
 	visibility: visible !important;
 	@include animation(extra_appear 2s ease-out);
 }
 
-.disappear {
+.extra-disappear {
 	visibility: visible !important;
 	@include animation(extra_disappear 2s ease-out);
 }
@@ -170,6 +170,16 @@ h2 {
 	}
 }
 
+.appear {
+	visibility: visible !important;
+	@include animation(modal_appear 1.5s ease-out);
+}
+
+.disappear {
+	visibility: visible !important;
+	@include animation(modal_disappear 1.5s ease-out);
+}
+
 .modal {
 	width: 100%;
 	height: 100%;
@@ -178,6 +188,7 @@ h2 {
 	background: rgba($txt_color, 0.8);
 	@include position(absolute, 0px 0 0 0px);
 	z-index: 5;
+	visibility: hidden;
 	.wrapper {
 		width: 1000px;
 		height: 80%;
@@ -186,6 +197,7 @@ h2 {
 		margin: 0 auto;
 		@include position(absolute, 100px 0 0 50%);
 		margin-left: -500px;
+		//border: 1px solid rgba($txt_color, 0.8);
 		img {
 			@include position(relative, 10px 0 0 47%);
 			cursor: pointer;
@@ -399,3 +411,40 @@ footer {
 		opacity: 0;	
 	}
 }
+
+@include keyframes(modal_appear) {
+	0% {
+		@include transform(scale(0.01));
+		@include transform-origin(center center);
+		opacity: 0;
+		background: rgba($txt_color, 0);
+	}
+	99% {
+		background: rgba($txt_color, 0);
+	}	
+	100% {
+		@include transform(scale(1));
+		@include transform-origin(center center);
+		opacity: 1;
+		background: rgba($txt_color, 0.8);
+	}
+}
+
+@include keyframes(modal_disappear) {
+	0% {
+		@include transform(scale(1));
+		background: rgba($txt_color, 0.8);
+	}
+	25% {
+		@include transform(scale(1));
+		background: rgba($txt_color, 0);
+	}
+	100% {
+		@include transform(scale(0.001));
+		@include transform-origin(center center);
+		background: rgba($txt_color, 0);
+	}
+}
+
+
+
