@@ -170,6 +170,73 @@ h2 {
 	}
 }
 
+.modal {
+	width: 100%;
+	height: 100%;
+	margin: 0 auto;
+	padding: 0;
+	background: rgba($txt_color, 0.8);
+	@include position(absolute, 0px 0 0 0px);
+	z-index: 5;
+	.wrapper {
+		width: 1000px;
+		height: 80%;
+		background: darken($fancy_color, 5%);
+		border-radius: 20px;
+		margin: 0 auto;
+		@include position(absolute, 100px 0 0 50%);
+		margin-left: -500px;
+		img {
+			@include position(relative, 10px 0 0 47%);
+			cursor: pointer;
+			z-index: 3;
+			opacity: 0.6;
+			&:hover {
+				opacity: 1;
+			}
+		}
+		h1 {
+			font-family: Futura, sans-serif;
+			color: $txt-color;
+			font-size: 40px;
+			@include animation(none);
+			&.title {
+				@include position(relative, -40px 0 0 0);
+				padding-bottom: 8px;
+				width: 100%;
+				background: $bg_color;
+				color: $fancy_color;
+				@include border-top-radius(16px);
+			}
+		}
+		article {
+			width: 95%;
+			background: $fancy_color;
+			box-shadow: 0 2px 2px 0 $txt_color;
+			margin: 0 auto;
+			padding: 10px 0px;
+			h1 {
+				font-size: 32px;
+				text-align: left;
+				margin-left: 25px;
+			}
+			p {
+				width: 95%;
+				text-align: left;
+				margin: 5px auto 0px; 
+				text-indent: 2em;
+			}
+		}
+		button {
+			@include button($bg_color);
+			font-size: 16px;
+			color: $fancy_color;
+			padding: 7px 14px;
+			@include position(relative, 0 0 0 355px);
+		}
+	}
+}
+
 footer {
 	position: relative;
 	bottom: 0;

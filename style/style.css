@@ -176,6 +176,101 @@ h2 {
     #extra img:hover {
       opacity: 1; }
 
+.modal {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  padding: 0;
+  background: rgba(86, 87, 89, 0.8);
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 5; }
+  .modal .wrapper {
+    width: 1000px;
+    height: 80%;
+    background: #dfdfe8;
+    border-radius: 20px;
+    margin: 0 auto;
+    position: absolute;
+    top: 100px;
+    left: 50%;
+    margin-left: -500px; }
+    .modal .wrapper img {
+      position: relative;
+      top: 10px;
+      left: 47%;
+      cursor: pointer;
+      z-index: 3;
+      opacity: 0.6; }
+      .modal .wrapper img:hover {
+        opacity: 1; }
+    .modal .wrapper h1 {
+      font-family: Futura, sans-serif;
+      color: #565759;
+      font-size: 40px;
+      -webkit-animation: none;
+      -moz-animation: none;
+      animation: none; }
+      .modal .wrapper h1.title {
+        position: relative;
+        top: -40px;
+        padding-bottom: 8px;
+        width: 100%;
+        background: #3583d7;
+        color: #eeeef3;
+        border-top-left-radius: 16px;
+        border-top-right-radius: 16px; }
+    .modal .wrapper article {
+      width: 95%;
+      background: #eeeef3;
+      box-shadow: 0 2px 2px 0 #565759;
+      margin: 0 auto;
+      padding: 10px 0px; }
+      .modal .wrapper article h1 {
+        font-size: 32px;
+        text-align: left;
+        margin-left: 25px; }
+      .modal .wrapper article p {
+        width: 95%;
+        text-align: left;
+        margin: 5px auto 0px;
+        text-indent: 2em; }
+    .modal .wrapper button {
+      border: 1px solid #1860ad;
+      border-radius: 3px;
+      box-shadow: inset 0 1px 0 0 #7baadd;
+      color: white;
+      display: inline-block;
+      font-size: 11px;
+      font-weight: bold;
+      background-color: #3583d7;
+      background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #3583d7), color-stop(100%, #1967ba));
+      background-image: -webkit-linear-gradient(#3583d7, #1967ba);
+      background-image: linear-gradient(#3583d7, #1967ba);
+      padding: 7px 18px;
+      text-decoration: none;
+      text-shadow: 0 1px 0 #1055a0;
+      background-clip: padding-box;
+      font-size: 16px;
+      color: #eeeef3;
+      padding: 7px 14px;
+      position: relative;
+      left: 355px; }
+      .modal .wrapper button:hover:not(:disabled) {
+        box-shadow: inset 0 1px 0 0 #5290d4;
+        cursor: pointer;
+        background-color: #2d76c6;
+        background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #2d76c6), color-stop(100%, #1960ac));
+        background-image: -webkit-linear-gradient(#2d76c6, #1960ac);
+        background-image: linear-gradient(#2d76c6, #1960ac); }
+      .modal .wrapper button:active:not(:disabled) {
+        border: 1px solid #1860ad;
+        box-shadow: inset 0 0 8px 4px #18589e, inset 0 0 8px 4px #18589e, 0 1px 1px 0 #eeeeee; }
+      .modal .wrapper button:disabled {
+        opacity: 0.5;
+        cursor: not-allowed; }
+
 footer {
   position: relative;
   bottom: 0;

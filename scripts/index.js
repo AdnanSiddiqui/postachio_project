@@ -5,11 +5,7 @@ tagline.addEventListener('click', function() {
 	extra.classList.toggle('shown');
 }, false);
 
-var close = document.getElementById('close');
-
-function removeClass() {
-	extra.classList.remove('disappear');
-}
+var close = document.getElementById('extra-close');
 
 close.addEventListener('click', function() {
 	extra.classList.remove('shown');
@@ -18,3 +14,6 @@ close.addEventListener('click', function() {
 		extra.classList.remove('disappear');
 	}, 2000);
 }, false);
+
+var second = document.querySelectorAll('.modal')[1];
+second.style.visibility = "hidden";
