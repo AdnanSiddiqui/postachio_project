@@ -15,7 +15,7 @@ body {
 }
 
 #wrapper {
-	margin: 100px auto 0;
+	margin: 0 auto;
 	@include size(80% 100%);
 	text-align: center;
 	min-width: 800px;
@@ -52,6 +52,11 @@ h2 {
 	background-position: 100% 100%;
 	margin: 15px auto 0;
 	cursor: pointer;
+	z-index: 3;
+	opacity: 0.8;
+	&:hover {
+		opacity: 1;
+	}
 	h2 {
 		@include hide-text;
 	}
@@ -116,13 +121,15 @@ h2 {
 }
 
 .extra-shown {
-	visibility: visible !important;
+	//visibility: visible !important;
+	position: static !important;
 	@include animation(extra_appear 2s ease-out);
 }
 
 .extra-disappear {
-	visibility: visible !important;
-	@include animation(extra_disappear 2s ease-out);
+	//visibility: visible !important;
+	position: static !important;
+	@include animation(extra_disappear 1s ease-out);
 }
 
 #extra {
@@ -133,7 +140,8 @@ h2 {
 	width: 600px;
 	letter-spacing: 1.5px;
 	margin: 10px auto 0px;
-	visibility: hidden;
+	@include position(absolute, -9999px 0 0 -9999px);
+	//visibility: hidden;
 	p {
 		margin: 0 0 5px 0;
 		padding: 0;
@@ -171,13 +179,17 @@ h2 {
 }
 
 .appear {
-	visibility: visible !important;
-	@include animation(modal_appear 1.5s ease-out);
+	//visibility: visible !important;
+	top: 0px !important;
+	left: 0px !important;
+	@include animation(modal_appear 1s ease-out);
 }
 
 .disappear {
-	visibility: visible !important;
-	@include animation(modal_disappear 1.5s ease-out);
+	top: 0px !important;
+	left: 0px !important;
+	//visibility: visible !important;
+	@include animation(modal_disappear 1s ease-out);
 }
 
 .modal {
@@ -186,9 +198,9 @@ h2 {
 	margin: 0 auto;
 	padding: 0;
 	background: rgba($txt_color, 0.8);
-	@include position(absolute, 0px 0 0 0px);
+	@include position(absolute, -9999px 0 0 -9999px);
 	z-index: 5;
-	visibility: hidden;
+	//visibility: hidden;
 	.wrapper {
 		overflow: scroll;
 		width: 1000px;
@@ -239,19 +251,27 @@ h2 {
 			}
 			h2 {
 				position: static;
+				text-align: left;
+				margin-left: 25px;
 			}
 			ul {
 				text-align: left;
 				li {
 					list-style-position: inside;
+					font-family: $verdana;
+					font-weight: 300;
 				}
+			}
+			p {
+				font-family: $verdana;
+				font-weight: 300;
 			}
 		}
 		article {
 			width: 95%;
 			background: $fancy_color;
 			box-shadow: 0 2px 2px 0 $txt_color;
-			margin: 0 auto;
+			margin: 0 auto 20px;
 			padding: 10px 0px;
 			h1 {
 				font-size: 32px;
@@ -263,6 +283,8 @@ h2 {
 				text-align: left;
 				margin: 5px auto 0px; 
 				text-indent: 2em;
+				font-family: $verdana;
+				font-weight: 300;
 			}
 		}
 		button {
@@ -271,6 +293,10 @@ h2 {
 			color: $fancy_color;
 			padding: 7px 14px;
 			@include position(relative, 0 0 0 355px);
+			&[name="resume"] {
+				left: 380px;
+				margin-bottom: 10px;
+			}
 		}
 	}
 }
@@ -278,6 +304,7 @@ h2 {
 footer {
 	position: relative;
 	bottom: 0;
+	margin-top: 100px;
 	@include animation(intro_tag 10s ease-out);
 	p {
 		color: $txt_color;
@@ -440,6 +467,8 @@ footer {
 
 @include keyframes(modal_appear) {
 	0% {
+		top: 0px;
+		left: 0px;
 		@include transform(scale(0.01));
 		@include transform-origin(center center);
 		opacity: 0;

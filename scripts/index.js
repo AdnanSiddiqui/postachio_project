@@ -26,7 +26,7 @@ extraClose.addEventListener('click', function() {
 	extra.classList.add('extra-disappear');
 	var timeoutId = window.setTimeout(function() {
 		extra.classList.remove('extra-disappear');
-	}, 2000);
+	}, 1000);
 }, false);
 
 for( i = 0; i < length; i++ ) {
@@ -36,14 +36,14 @@ for( i = 0; i < length; i++ ) {
 			resume.classList.add('disappear');
 			var timeoutId = window.setTimeout(function() {
 				resume.classList.remove('disappear');
-			}, 1500);			
+			}, 1000);			
 		}
 
 		samples.classList.remove('appear');
 		samples.classList.add('disappear');
 		var timeoutId = window.setTimeout(function() {
 			samples.classList.remove('disappear');
-		}, 1500);
+		}, 1000);
 	}, false);
 }
 

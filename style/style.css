@@ -6,7 +6,7 @@ body {
   margin: 0; }
 
 #wrapper {
-  margin: 100px auto 0;
+  margin: 0 auto;
   width: 80%;
   height: 100%;
   text-align: center;
@@ -47,9 +47,13 @@ h2 {
   background-position: 100% 100%;
   margin: 15px auto 0;
   cursor: pointer;
+  z-index: 3;
+  opacity: 0.8;
   -webkit-animation: intro_tag 5s ease-out;
   -moz-animation: intro_tag 5s ease-out;
   animation: intro_tag 5s ease-out; }
+  #tagline:hover {
+    opacity: 1; }
   #tagline h2 {
     color: transparent;
     font: 0/0 a;
@@ -123,16 +127,16 @@ h2 {
       font-size: 42px; }
 
 .extra-shown {
-  visibility: visible !important;
+  position: static !important;
   -webkit-animation: extra_appear 2s ease-out;
   -moz-animation: extra_appear 2s ease-out;
   animation: extra_appear 2s ease-out; }
 
 .extra-disappear {
-  visibility: visible !important;
-  -webkit-animation: extra_disappear 2s ease-out;
-  -moz-animation: extra_disappear 2s ease-out;
-  animation: extra_disappear 2s ease-out; }
+  position: static !important;
+  -webkit-animation: extra_disappear 1s ease-out;
+  -moz-animation: extra_disappear 1s ease-out;
+  animation: extra_disappear 1s ease-out; }
 
 #extra {
   text-align: left;
@@ -142,7 +146,9 @@ h2 {
   width: 600px;
   letter-spacing: 1.5px;
   margin: 10px auto 0px;
-  visibility: hidden; }
+  position: absolute;
+  top: -9999px;
+  left: -9999px; }
   #extra p {
     margin: 0 0 5px 0;
     padding: 0; }
@@ -177,16 +183,18 @@ h2 {
       opacity: 1; }
 
 .appear {
-  visibility: visible !important;
-  -webkit-animation: modal_appear 1.5s ease-out;
-  -moz-animation: modal_appear 1.5s ease-out;
-  animation: modal_appear 1.5s ease-out; }
+  top: 0px !important;
+  left: 0px !important;
+  -webkit-animation: modal_appear 1s ease-out;
+  -moz-animation: modal_appear 1s ease-out;
+  animation: modal_appear 1s ease-out; }
 
 .disappear {
-  visibility: visible !important;
-  -webkit-animation: modal_disappear 1.5s ease-out;
-  -moz-animation: modal_disappear 1.5s ease-out;
-  animation: modal_disappear 1.5s ease-out; }
+  top: 0px !important;
+  left: 0px !important;
+  -webkit-animation: modal_disappear 1s ease-out;
+  -moz-animation: modal_disappear 1s ease-out;
+  animation: modal_disappear 1s ease-out; }
 
 .modal {
   width: 100%;
@@ -195,10 +203,9 @@ h2 {
   padding: 0;
   background: rgba(86, 87, 89, 0.8);
   position: absolute;
-  top: 0px;
-  left: 0px;
-  z-index: 5;
-  visibility: hidden; }
+  top: -9999px;
+  left: -9999px;
+  z-index: 5; }
   .modal .wrapper {
     overflow: scroll;
     width: 1000px;
@@ -251,16 +258,23 @@ h2 {
         margin-left: 25px;
         margin-bottom: 10px; }
       .modal .wrapper section h2 {
-        position: static; }
+        position: static;
+        text-align: left;
+        margin-left: 25px; }
       .modal .wrapper section ul {
         text-align: left; }
         .modal .wrapper section ul li {
-          list-style-position: inside; }
+          list-style-position: inside;
+          font-family: Verdana, Geneva, sans-serif;
+          font-weight: 300; }
+      .modal .wrapper section p {
+        font-family: Verdana, Geneva, sans-serif;
+        font-weight: 300; }
     .modal .wrapper article {
       width: 95%;
       background: #eeeef3;
       box-shadow: 0 2px 2px 0 #565759;
-      margin: 0 auto;
+      margin: 0 auto 20px;
       padding: 10px 0px; }
       .modal .wrapper article h1 {
         font-size: 32px;
@@ -270,7 +284,9 @@ h2 {
         width: 95%;
         text-align: left;
         margin: 5px auto 0px;
-        text-indent: 2em; }
+        text-indent: 2em;
+        font-family: Verdana, Geneva, sans-serif;
+        font-weight: 300; }
     .modal .wrapper button {
       border: 1px solid #1860ad;
       border-radius: 3px;
@@ -305,10 +321,14 @@ h2 {
       .modal .wrapper button:disabled {
         opacity: 0.5;
         cursor: not-allowed; }
+      .modal .wrapper button[name="resume"] {
+        left: 380px;
+        margin-bottom: 10px; }
 
 footer {
   position: relative;
   bottom: 0;
+  margin-top: 100px;
   -webkit-animation: intro_tag 10s ease-out;
   -moz-animation: intro_tag 10s ease-out;
   animation: intro_tag 10s ease-out; }
@@ -822,6 +842,8 @@ footer {
 
 @-webkit-keyframes modal_appear {
   0% {
+    top: 0px;
+    left: 0px;
     -webkit-transform: scale(0.01);
     -webkit-transform-origin: center center;
     opacity: 0;
@@ -838,6 +860,8 @@ footer {
 
 @-moz-keyframes modal_appear {
   0% {
+    top: 0px;
+    left: 0px;
     -moz-transform: scale(0.01);
     -moz-transform-origin: center center;
     opacity: 0;
@@ -854,6 +878,8 @@ footer {
 
 @-o-keyframes modal_appear {
   0% {
+    top: 0px;
+    left: 0px;
     -o-transform: scale(0.01);
     -o-transform-origin: center center;
     opacity: 0;
@@ -870,6 +896,8 @@ footer {
 
 @keyframes modal_appear {
   0% {
+    top: 0px;
+    left: 0px;
     transform: scale(0.01);
     transform-origin: center center;
     opacity: 0;
