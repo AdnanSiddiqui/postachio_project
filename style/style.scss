@@ -134,9 +134,9 @@ h2 {
 
 #extra {
 	text-align: left;
-	font-family: $txt_font;
+	font-family: $verdana;
 	color: $fancy_color;
-	font-size: 28px;
+	font-size: 18px;
 	width: 600px;
 	letter-spacing: 1.5px;
 	margin: 10px auto 0px;
@@ -146,7 +146,7 @@ h2 {
 		margin: 0 0 5px 0;
 		padding: 0;
 		&#castle {
-			margin-left: 200px;
+			margin-left: 260px;
 		}
 	}
 	h2 {
@@ -165,7 +165,7 @@ h2 {
 		padding: 0;
 		text-align: right;
 		color: $fancy_color;
-		font-size: 24px;
+		font-size: 20px;
 		font-weight: normal;
 	}
 	img {
@@ -292,10 +292,10 @@ h2 {
 			font-size: 16px;
 			color: $fancy_color;
 			padding: 7px 14px;
-			@include position(relative, 0 0 0 355px);
+			@include position(relative, 10px 0 0 355px);
+			margin-bottom: 10px;
 			&[name="resume"] {
 				left: 380px;
-				margin-bottom: 10px;
 			}
 		}
 	}
