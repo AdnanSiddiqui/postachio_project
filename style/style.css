@@ -33,7 +33,7 @@ h2 {
   h2:first-of-type {
     position: relative;
     top: 65px;
-    right: 90px;
+    right: 110px;
     letter-spacing: -1px;
     -webkit-animation: intro_title 3s ease-out;
     -moz-animation: intro_title 3s ease-out;

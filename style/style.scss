@@ -39,7 +39,7 @@ h2 {
 	padding: 0;
 	font-weight: normal;
 	&:first-of-type {
-		@include position(relative, 65px 90px 0 0);
+		@include position(relative, 65px 110px 0 0);
 		letter-spacing: -1px;
 		@include animation(intro_title 3s ease-out);
 	}
